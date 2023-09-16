@@ -1,0 +1,1 @@
+This is my conflict test file for CS 260 at BYU 
