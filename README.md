@@ -8,7 +8,6 @@
 
 ![1](https://github.com/jacjacattac/startup/assets/92479749/78995068-c16b-44e7-abaa-79350749b209)
 
-
 ![2](https://github.com/jacjacattac/startup/assets/92479749/bbd0f794-146c-4d2f-abb5-95436389e8f8)
 
 ![3](https://github.com/jacjacattac/startup/assets/92479749/8d53becd-8e03-4c43-bab5-b22cf22f4279)
