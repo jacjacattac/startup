@@ -18,10 +18,17 @@ This is a generic layout. The text and features on the website is accurate, thou
 
 ## Technologies 
 **HTML** - Use HTML structure for application. Five HTML pages. One for home page, one for login, one for cost estimation, one for contact info, one for an about page, and one for voting. Hyperlinks to choice artifact.
+
 **CSS** - Use it for style, color, font, whitespace to make application look nice. 
+
 **JavaScript** - Provides login and inputting data 
+
 **WebService** - backend services for login and retrieving calculations for cost estimates. Connect to instagram server to display photos. 
-**DB** - Stores users and cost estimations in database
+
+**DB** - Stores users and cost estimations in database.
+
 **Login** - Register and login users. Credentials securely stored in database. 
-**WebSocket** - Send data to server that an estimate was made and number of estimates will be counted and displayed on the website. 
+
+**WebSocket** - Send data to server that an estimate was made and number of estimates will be counted and displayed on the website.
+
 **React** - Application ported to use the react web framework 
