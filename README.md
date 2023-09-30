@@ -24,11 +24,21 @@ This is a generic layout. The text and features on the website is accurate, thou
 ![5](https://github.com/jacjacattac/startup/assets/92479749/268992c9-9415-4118-b306-8afd977c70e1)
 
 ## Technologies 
-- **HTML** - Use HTML structure for application. Five HTML pages. One for home page, one for login, one for cost estimation, one for contact info, one for an about page, and one for voting. Hyperlinks to choice artifact.
+- **HTML** - Use HTML structure for application. Five HTML pages. One for home page, one for login, one for cost estimation, one for contact info, and one for an about page. Hyperlinks to choice artifact.
 - **CSS** - Use it for style, color, font, whitespace to make application look nice. 
 - **JavaScript** - Provides login and inputting data 
 - **WebService** - backend services for login and retrieving calculations for cost estimates. Connect to instagram server to display photos. 
 - **DB** - Stores users and cost estimations in database.
 - **Login** - Register and login users. Credentials securely stored in database. 
 - **WebSocket** - Send data to server that an estimate was made and number of estimates will be counted and displayed on the website.
-- **React** - Application ported to use the react web framework 
+- **React** - Application ported to use the react web framework
+
+## HTML Deliverable
+- **HTML**  - Five HTML page that provide information about the business, have the ability to login and generate prices.
+- **Links** - The login page automatically links to the consultation page. Each page contains menu bar with links to other pages.
+- **Text** - Each page provides textual context.
+- **Images** - Used a placeholder image to show where images would go in the website. 
+- **Login** - Login available on first page that links to consultation.
+- **Database** - Wasn’t sure exactly how to show a database placeholder so I just made a txt file that has the prices for the cost estimation, which will be used when the user clicks generate after entering prices on the consultation page. 
+- **WebSocket** - When an estimation is made it will send data to server that estimation was made and updated number of estimations will be immediately displayed on the website. There is text there acting as a placeholder of where that information will go on the consultation page. 
+- **3rd Party** - On portfolio page I put images as a placeholder for where the instagram service will be called and display the images. 
