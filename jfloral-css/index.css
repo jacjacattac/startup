@@ -2,7 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
-    background-image: url('placeholder');
   }
   
   header {
@@ -15,6 +14,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    font-family: 'URW Chancery L', cursive;
+    font-size: 20px;
   }
   
   footer {
@@ -37,9 +38,18 @@ body {
   menu .nav-item {
     padding: 0 0.3em;
   }
+
+  menu .nav-link {
+    font-size: 40px; 
+    font-family: 'URW Chancery L', cursive;
+  }
   
   footer a {
     float: right;
+  }
+
+  main h1 {
+    font-size: 100px;
   }
   
   @media (max-height: 600px) {

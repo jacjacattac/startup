@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JFloral Co HTML</title>
-    <link rel="icon" href="favicon.ico" />
+    <title>JFloral Co CSS</title>
 
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="index.css" />
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -19,8 +18,8 @@
   </head>
   <body class="bg-dark text-light">
     <header class="container-fluid">
-      <nav class="navbar fixed-top navbar-dark">
-        <menu class="navbar-nav">
+      <nav class="navbar navbar-dark">
+        <menu class="navbar-nav justify-content-between">
           <li class="nav-item">
             <a class="nav-link active" href="index.html">Home</a>
           </li>
@@ -35,24 +34,23 @@
           </li>
         </menu>
       </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
     </header>
 
-    <main class="container-fluid bg-secondary text-center"></main>
-      <h1>Welcome</h1>
-      <p>Login to receive a estimated price!</p>
-      <form method="get" action="consultation.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
-        <button type="submit">Login</button>
-      </form>
+    <main class="container-fluid bg-secondary text-center">
+      <div>
+        <h1>J Floral Co</h1>
+        <p>Login to receive a estimated price!</p>
+        <form method="get" action="consultation.html">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name here" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </main>
 
     <footer class="bg-dark text-white-50"></footer>
       <hr />
-      <span class="text-reset">Author Name(s)</span>
+      <span class="text-reset">Jaclyn Palmer</span>
       <br />
       <a href="https://github.com/jacjacattac/startup">GitHub</a>
     </footer>
