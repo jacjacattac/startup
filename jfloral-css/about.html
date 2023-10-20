@@ -2,28 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link rel="icon" href="favicon.ico" />
-  </head>
-  <body>
-    <header>
-      <h1>J Floral Co: About Me</h1>
+    <title>JFloral Co CSS</title>
 
-      <nav>
-        <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Include bootstrap CSS framework -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light">
+    <header class="container-fluid">
+      <nav class="navbar navbar-dark">
+        <menu class="navbar-nav justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contact</a>
+          </li>
         </menu>
       </nav>
-
-      <hr />
     </header>
 
     <main>
-      <div id="picture" class="picture-box"><img width="400px" src="flower-placeholder.jpg" alt="flowers" /></div>
+      <div id="picture" class="picture-box"><img width="400px" src="Blonde.avif" alt="flowers" /></div>
 
       <p>
         Jessica Palmer was born and raised in Gilbert, Arizona. She has always loved being creative and making things beautiful. While attending BYU, 
