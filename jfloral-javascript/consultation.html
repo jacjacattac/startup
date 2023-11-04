@@ -6,7 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JFloral Co CSS</title>
 
-    <script src="consultation.js"></script>
+    
+
+    <script>
+      function displayEstimate() {
+          var estimateResult = document.getElementById("estimateResult");
+          var totalEstimate = estimate();
+          estimateResult.textContent = totalEstimate.toFixed(2); // Display with two decimal places
+      }
+
+
+      function estimate() {
+          var guests = parseFloat(document.getElementById("guests").value);
+          var groomsmen = parseFloat(document.getElementById("men").value);
+          var bridesmaids = parseFloat(document.getElementById("maids").value);
+          let total = 0;
+        
+          if (!isNaN(guests) && guests >= 1) {
+            total += guests * 20;
+          }
+          if (!isNaN(groomsmen) && groomsmen >= 1) {
+            total += groomsmen * 15;
+          }
+          if (!isNaN(bridesmaids) && bridesmaids >= 1) {
+            total += bridesmaids * 50;
+          }
+          return total; 
+        }
+    </script>
+
+
+
+
     <link rel="stylesheet" href="index.css" />
 
     <!-- Include bootstrap CSS framework -->
@@ -48,7 +79,7 @@
     <button onclick="displayEstimate()">Generate</button>
     <!-- <p><button type="submit">Generate</button></p> -->
 
-    <h2>Estimation: <span id="estimateResult"></span></h2>
+    <h2>Estimation: $<span id="estimateResult"></span></h2>
     <p>Estimations given:</p>
   
   </main>
