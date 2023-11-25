@@ -42,11 +42,18 @@ This is a generic layout. The text and features on the website is accurate, thou
 - **Database** - Wasn’t sure exactly how to show a database placeholder so I just made a txt file that has the prices for the cost estimation, which will be used when the user clicks generate after entering prices on the consultation page. 
 - **WebSocket** - When an estimation is made it will send data to server that estimation was made and updated number of estimations will be immediately displayed on the website. There is text there acting as a placeholder of where that information will go on the consultation page. 
 - **3rd Party** - On portfolio page I put images as a placeholder for where the instagram service will be called and display the images.
-- 
+  
 ## CSS Deliverable
 - **Header, footer, and main content body**
 - **Navigation elements** - I made my navigation elements a different size and spacing and a different color. 
 - **Responsive to window resizing** - Looks good on all window sizes and devices
 - **Application elements** - Used images and color schemes and spacing to create a good design
 - **Application text content** - Consistent fonts and colors
-- **Application images** - Used a picture of flowers for the background and included a picture of the florist. There are also images on the portfolio page to simulate the instagram page that will later be there. 
+- **Application images** - Used a picture of flowers for the background and included a picture of the florist. There are also images on the portfolio page to simulate the instagram page that will later be there.
+
+## JavaScript Deliverable
+- **Login** - Added JavaScript for logging in 
+- **Database** - Eventually login data will be stored in a database
+- **Websocket** - Will keep track of estimations and will later display the flowers on portfolio page
+- **Interactive** - Consultation page allows for interaction, user gives input and a price is generated 
+
