@@ -80,7 +80,7 @@
             .then(result => {
               // Create and append the estimateResult element
               const estimateResult = document.createElement('h2');
-              estimateResult.textContent = `Estimation: $${result.totalEstimate.toFixed(2)}`;
+              estimateResult.textContent = `Estimation: $${result.totalEstimate}`;
               document.body.appendChild(estimateResult);
             })
             .catch(error => {
