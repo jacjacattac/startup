@@ -5,35 +5,6 @@
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JFloral Co CSS</title>
-    <script>
-      document.getElementById('generateButton').addEventListener('click', () => {
-          const guestsInput = document.getElementById('guests');
-          const menInput = document.getElementById('men');
-          const maidsInput = document.getElementById('maids');
-          const estimateResult = document.getElementById('estimateResult');
-
-          const data = {
-              guests: guestsInput.value,
-              men: menInput.value,
-              maids: maidsInput.value,
-          };
-
-          fetch('/estimate', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(data),
-          })
-              .then(response => response.json())
-              .then(result => {
-                  estimateResult.textContent = result.totalEstimate.toFixed(2);
-              })
-              .catch(error => {
-                  console.error('Error:', error);
-              });
-      });
-    </script>
 
     <link rel="stylesheet" href="index.css" />
 
@@ -74,10 +45,39 @@
     <p><label for="maids">Number of Bridesmaids</label>
     <input type="text" id="maids" placeholder="Enter number here" /></p>
     <button type="button" id="generateButton">Generate</button>
-    <!-- <p><button type="submit">Generate</button></p> -->
 
     <h2>Estimation: $<span id="estimateResult"></span></h2>
     <p>Estimations given:</p>
+    <script>
+      document.getElementById('generateButton').addEventListener('click', () => {
+          const guestsInput = document.getElementById('guests');
+          const menInput = document.getElementById('men');
+          const maidsInput = document.getElementById('maids');
+          const estimateResult = document.getElementById('estimateResult');
+
+          const data = {
+              guests: guestsInput.value,
+              men: menInput.value,
+              maids: maidsInput.value,
+          };
+
+          fetch('/estimate', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+          })
+              .then(response => response.json())
+              .then(result => {
+                  estimateResult.textContent = result.totalEstimate.toFixed(2);
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+              });
+      });
+
+    </script>
   
   </main>
 
