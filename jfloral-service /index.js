@@ -14,7 +14,6 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 
-
 // Endpoint to handle the estimate calculation
 apiRouter.post('/estimate', (req, res) => {
   const { guests, men, maids } = req.body;
