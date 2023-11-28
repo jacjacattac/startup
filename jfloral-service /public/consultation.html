@@ -68,14 +68,24 @@
               },
               body: JSON.stringify(data),
             })
-              .then(response => response.json())
-              .then(result => {
-                console.log(result); // Check the browser console for the received data
-              })
-              .catch(error => {
-                console.error('Error:', error);
-              });
-           });
+          //     .then(response => response.json())
+          //     .then(result => {
+          //       console.log(result); // Check the browser console for the received data
+          //     })
+          //     .catch(error => {
+          //       console.error('Error:', error);
+          //     });
+          //  });
+          .then(response => response.json())
+            .then(result => {
+              // Create and append the estimateResult element
+              const estimateResult = document.createElement('h2');
+              estimateResult.textContent = `Estimation: $${result.totalEstimate.toFixed(2)}`;
+              document.body.appendChild(estimateResult);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
 
     </script>
   
