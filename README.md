@@ -55,5 +55,12 @@ This is a generic layout. The text and features on the website is accurate, thou
 - **Login** - Added JavaScript for logging in 
 - **Database** - Eventually login data will be stored in a database
 - **Websocket** - Will keep track of estimations and will later display the flowers on portfolio page
-- **Interactive** - Consultation page allows for interaction, user gives input and a price is generated 
+- **Interactive** - Consultation page allows for interaction, user gives input and a price is generated
+
+## Web Service Deliverable 
+- **Node.js/Express HTTP service** - done
+- **Static middleware for frontend** - done
+**Calls to third party endpoints** - Literally couldn't get the instagram api to work to save my life so dont have this one done
+**Backend service endpoints** - done 
+**Frontend calls service endpoints** - I did this using the fetch function.
 
