@@ -18,6 +18,8 @@ app.use(`/api`, apiRouter);
 apiRouter.post('/estimate', (req, res) => {
   const { guests, men, maids } = req.body;
   const totalEstimate = estimate(guests, men, maids);
+  // Adding this line to test 
+  
   res.json({ totalEstimate: totalEstimate.toFixed(2) });
 });
 
