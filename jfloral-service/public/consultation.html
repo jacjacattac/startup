@@ -77,10 +77,10 @@
           //  });
           .then(response => response.json())
             .then(result => {
-              const estimateResult = document.createElement('text');
-              estimateResult.textContent = `Estimation: $${result.totalEstimate}`;
-              document.body.appendChild(estimateResult);
-              //estimateResult.textContent = result.totalEstimate;
+              // const estimateResult = document.createElement('text');
+              // estimateResult.textContent = `Estimation: $${result.totalEstimate}`;
+              // document.body.appendChild(estimateResult);
+              estimateResult.textContent = result.totalEstimate;
             })
             .catch(error => {
               console.error('Error:', error);
