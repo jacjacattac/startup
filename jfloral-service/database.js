@@ -15,7 +15,7 @@ const estimateCollection = db.collection('estimates');
   process.exit(1);
 });
 
-async function addEstimate(estimate){
+async function addEstimate(estimate) {
     const result = await estimateCollection.insertOne(estimate);
   return result;
 }
