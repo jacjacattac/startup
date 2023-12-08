@@ -45,8 +45,7 @@
     <p><label for="maids">Number of Bridesmaids</label>
     <input type="text" id="maids" placeholder="Enter number here" /></p>
     <button type="button" id="generateButton">Generate</button>
-    <h2>Estimation: $<span id="estimateResult"></span></h2>
-    <p>Estimations given:</p>
+    
 
     <script>
       document.getElementById('generateButton').addEventListener('click', () => {
@@ -78,7 +77,10 @@
           //  });
           .then(response => response.json())
             .then(result => {
-              estimateResult.textContent = result.totalEstimate;
+              const estimateResult = document.createElement('text');
+              estimateResult.textContent = `Estimation: $${result.totalEstimate}`;
+              document.body.appendChild(estimateResult);
+              //estimateResult.textContent = result.totalEstimate;
             })
             .catch(error => {
               console.error('Error:', error);
