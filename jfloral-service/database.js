@@ -20,5 +20,5 @@ async function addEstimate(estimate) {
   return result;
 }
 
-
+module.exports = { addEstimate };
 
