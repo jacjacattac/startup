@@ -60,7 +60,12 @@ This is a generic layout. The text and features on the website is accurate, thou
 ## Web Service Deliverable 
 - **Node.js/Express HTTP service** - done
 - **Static middleware for frontend** - done
-**Calls to third party endpoints** - Literally couldn't get the instagram api to work to save my life so dont have this one done
-**Backend service endpoints** - done 
-**Frontend calls service endpoints** - I did this using the fetch function.
+- **Calls to third party endpoints** - Literally couldn't get the instagram api to work to save my life so dont have this one done
+- **Backend service endpoints** - done 
+- **Frontend calls service endpoints** - I did this using the fetch function.
+
+## Database Deliverable 
+- **MongoDB Atlas database created** 
+- **Endpoints for data** - Endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - Yes sir 
 
