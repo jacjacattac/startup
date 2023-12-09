@@ -16,14 +16,12 @@ app.use(`/api`, apiRouter);
 
 
 // Endpoint to handle the estimate calculation
-apiRouter.post('/estimate', (req, res) => {
+apiRouter.post('/estimate', async (req, res) => {
   const { guests, men, maids } = req.body;
   const totalEstimate = estimate(guests, men, maids);
-  const responseJSON = {
-    totalEstimate: totalEstimate.toFixed(2),
-  };
+
   // Adding this line to test 
-  DB.addEstimate(responseJSON);
+  DB.addEstimate({ totalEstimate: totalEstimate.toFixed(2) });
   
   res.json({ totalEstimate: totalEstimate.toFixed(2) });
 });
