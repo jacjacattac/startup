@@ -5,6 +5,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('estimates');
 const estimateCollection = db.collection('totalCost');
+const userCollection = db.collection('user');
 
 
 
@@ -17,6 +18,29 @@ const estimateCollection = db.collection('totalCost');
   process.exit(1);
 });
 
+function getUser(email) {
+  return userCollection.findOne({ email: email });
+}
+
+function getUserByToken(token) {
+  return userCollection.findOne({ token: token });
+}
+
+async function createUser(email, password) {
+  // Hash the password before we insert it into the database
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  const user = {
+    email: email,
+    password: passwordHash,
+    token: uuid.v4(),
+  };
+  await userCollection.insertOne(user);
+
+  return user;
+}
+
+
 async function addEstimate(estimate) {
     const result = await estimateCollection.insertOne(estimate);
     console.log('Estimate added successfully:', result);
@@ -24,5 +48,8 @@ async function addEstimate(estimate) {
 }
 
 
-module.exports = { addEstimate };
+module.exports = { getUser,
+  getUserByToken,
+  createUser,
+  addEstimate };
 
