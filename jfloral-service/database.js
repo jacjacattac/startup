@@ -53,6 +53,6 @@ async function addEstimate(estimate) {
 module.exports = { getUser,
   getUserByToken,
   createUser,
-  addEstimate 
+  addEstimate, 
 };
 
