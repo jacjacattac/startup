@@ -1,14 +1,13 @@
-const { MongoClient } = require('mongodb');
-const bcrypt = require('bcrypt');
-const uuid = require('uuid');
-const config = require('./dbConfig.json');
+import { MongoClient } from 'mongodb';
+import { hash } from 'bcrypt';
+import { v4 } from 'uuid';
+import { userName, password as _password, hostname } from './dbConfig.json';
 
-const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+const url = `mongodb+srv://${userName}:${_password}@${hostname}`;
 const client = new MongoClient(url);
 const db = client.db('estimates');
 const estimateCollection = db.collection('totalCost');
 const userCollection = db.collection('user');
-
 
 
 // This will asynchronously test the connection and exit the process if it fails
@@ -30,12 +29,12 @@ function getUserByToken(token) {
 
 async function createUser(email, password) {
   // Hash the password before we insert it into the database
-  const passwordHash = await bcrypt.hash(password, 10);
+  const passwordHash = await hash(password, 10);
 
   const user = {
     email: email,
     password: passwordHash,
-    token: uuid.v4(),
+    token: v4(),
   };
   await userCollection.insertOne(user);
 
@@ -50,7 +49,7 @@ async function addEstimate(estimate) {
 }
 
 
-module.exports = { 
+export default { 
   getUser,
   getUserByToken,
   createUser,
