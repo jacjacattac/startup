@@ -58,11 +58,23 @@ async function addEstimate(estimate) {
   return result;
 }
 
+async function getEstimationCount() {
+  try {
+    // Use the countDocuments method to get the count of documents in the collection
+    const count = await estimateCollection.countDocuments();
+    return count;
+  } catch (error) {
+    console.error('Error getting estimation count:', error);
+    throw error;
+  }
+}
+
 
 module.exports = { 
   getUser,
   getUserByToken,
   createUser,
   addEstimate, 
+  getEstimationCount
 };
 
