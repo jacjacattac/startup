@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -42,8 +43,9 @@ apiRouter.post('/auth/login', async (req, res) => {
   const user = await DB.getUser(req.body.email);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
+      const estimationCount = await estimateCollection.countDocuments({ email: req.body.email });
       setAuthCookie(res, user.token);
-      res.send({ id: user._id });
+      res.send({ id: user._id, estimationCount });
       return;
     }
   }
@@ -61,6 +63,7 @@ apiRouter.get('/user/:email', async (req, res) => {
   const user = await DB.getUser(req.params.email);
   if (user) {
     const token = req?.cookies.token;
+    const estimationCount = await DB.getEstimationCount(); // Retrieve the estimation count
     res.send({ email: user.email, authenticated: token === user.token });
     return;
   }
@@ -87,10 +90,14 @@ apiRouter.post('/estimate', async (req, res) => {
   const { guests, men, maids } = req.body;
   const totalEstimate = estimate(guests, men, maids);
 
-  // Adding this line to test 
-  DB.addEstimate({ totalEstimate: totalEstimate.toFixed(2) });
+  // Store the estimation details in the database
+  const estimationDetails = { guests, men, maids, totalEstimate };
+  DB.addEstimate(estimationDetails);
+
+  // Retrieve and send the total estimation count
+  const estimationCount = await DB.getEstimationCount();
   
-  res.json({ totalEstimate: totalEstimate.toFixed(2) });
+  res.json({ totalEstimate: totalEstimate.toFixed(2), estimationCount });
 });
 
 // Return the application's default page if the path is unknown

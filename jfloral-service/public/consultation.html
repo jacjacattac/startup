@@ -69,19 +69,8 @@
               },
               body: JSON.stringify(data),
             })
-          //     .then(response => response.json())
-          //     .then(result => {
-          //       console.log(result); // Check the browser console for the received data
-          //     })
-          //     .catch(error => {
-          //       console.error('Error:', error);
-          //     });
-          //  });
           .then(response => response.json())
             .then(result => {
-              // const estimateResult = document.createElement('text');
-              // estimateResult.textContent = `Estimation: $${result.totalEstimate}`;
-              // document.body.appendChild(estimateResult);
               estimateResult.textContent = result.totalEstimate;
             })
             .catch(error => {

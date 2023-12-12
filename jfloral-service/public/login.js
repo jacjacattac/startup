@@ -31,6 +31,9 @@ async function loginOrCreate(endpoint) {
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
+    if (user.estimationCount !== undefined) {
+      updateEstimationCount(user.estimationCount);
+    }
     window.location.href = 'consultation.html';
   } else {
     const body = await response.json();
