@@ -67,5 +67,11 @@ This is a generic layout. The text and features on the website is accurate, thou
 ## Database Deliverable 
 - **MongoDB Atlas database created** 
 - **Endpoints for data** - Endpoints now process the data and send it to Mongo.
-- **Stores data in MongoDB** - Yes sir 
+- **Stores data in MongoDB** - Yes sir
+
+## Login Deliverable
+- **User registration** - yes
+- **existing user** - yes
+- **Use MongoDB to store credentials** - yes
+- **Restricts functionality** - Yes
 
