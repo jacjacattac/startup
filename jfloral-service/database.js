@@ -21,15 +21,6 @@ const userCollection = db.collection('user');
 
 async function getUser(email) {
   const user = await userCollection.findOne({ email: email });
-
-  if (user) {
-    // Fetch the estimate count for the user from the estimateCollection
-    const estimateCount = await estimateCollection.countDocuments({ email: email });
-    
-    // Add the estimate count to the user object
-    user.estimationCount = estimateCount;
-  }
-
   return user;
 }
 

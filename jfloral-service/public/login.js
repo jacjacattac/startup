@@ -28,12 +28,13 @@ async function loginOrCreate(endpoint) {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
+  console.log('Response Status:', response.status); // Log the response status
+
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
-    if (user.estimationCount !== undefined) {
-      updateEstimationCount(user.estimationCount);
-    }
+    console.log('Redirecting to consultation.html...'); // Log redirection
+
     window.location.href = 'consultation.html';
   } else {
     const body = await response.json();
