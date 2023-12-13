@@ -43,9 +43,8 @@ apiRouter.post('/auth/login', async (req, res) => {
   const user = await DB.getUser(req.body.email);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
-      const estimationCount = await estimateCollection.countDocuments({ email: req.body.email });
       setAuthCookie(res, user.token);
-      res.send({ id: user._id, estimationCount });
+      res.send({ id: user._id });
       return;
     }
   }
