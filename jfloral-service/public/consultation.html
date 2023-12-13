@@ -48,32 +48,33 @@
     
     <h2>Estimation: $<span id="estimateResult"></span></h2>
     <p>Estimate Count: <span id="estimationCount"></span></p>
-    <script>
-      // Assuming you have a div with id 'estimationCount' to display the count
-      const estimationCountElement = document.getElementById('estimationCount');
-
-      // Your existing code...
-
-      // Inside a function where you handle user authentication or page load
-      function handleUserAuthentication(user) {
-        // Check if the user is authenticated and update the UI accordingly
-
-        // Assuming the server sends the estimation count along with user information
-        const { authenticated, estimationCount } = user;
-
-        if (authenticated) {
-          // Update the UI to display the estimation count
-          estimationCountElement.textContent = `Estimations made: ${estimationCount}`;
-        }
-      }
-    </script>
 
     <script>
+    function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === "click") {
+        document.getElementById('estimationCount').textContent = msg.count;
+        } 
+      };
+    }
+
+    function broadcastEvent(type) {
+    const event = {
+      type: type
+    };
+    socket.send(JSON.stringify(event));
+  }
+
+
       document.getElementById('generateButton').addEventListener('click', () => {
           const guestsInput = document.getElementById('guests');
           const menInput = document.getElementById('men');
           const maidsInput = document.getElementById('maids');
           const estimate = document.getElementById('estimateResult');
+          broadcastEvent("click");
 
           const data = {
               guests: guestsInput.value,
@@ -96,8 +97,8 @@
               console.error('Error:', error);
             });
           });
+          configureWebSocket();
     </script>
-
     </main>
     </body>
   </html>
