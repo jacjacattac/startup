@@ -75,3 +75,12 @@ This is a generic layout. The text and features on the website is accurate, thou
 - **Use MongoDB to store credentials** - yes
 - **Restricts functionality** - Yes
 
+## Websocket Deliverable
+
+For this Deliverable I got it to in real time keep track of and display how many estimates an individual user makes during their session
+
+**Backend listens for WebSocket connection** - done!
+**Frontend makes WebSocket connection** - done!
+**Data sent over WebSocket connection** - done!
+**WebSocket data displayed** - Numver of estimates mad display in realtime. 
+
