@@ -51,17 +51,18 @@
 
     <script>
     console.log("beginning of html script");
-    function configureWebSocket() {
+    
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    
     socket.onmessage = async (event) => {
-      const msg = JSON.parse(await event.data.text());
+      const msg = JSON.parse(await event.data);
       if (msg.type === "click") {
         console.log("click count received:", msg.count);
         document.getElementById('estimationCount').textContent = msg.count;
         } 
       };
-    }
+    
 
     function broadcastEvent(type) {
     const event = {
@@ -100,7 +101,6 @@
               console.error('Error:', error);
             });
           });
-          configureWebSocket();
     </script>
     </main>
     </body>
