@@ -89,6 +89,7 @@ secureApiRouter.use(async (req, res, next) => {
 apiRouter.post('/estimate', async (req, res) => {
   const { guests, men, maids } = req.body;
   const totalEstimate = estimate(guests, men, maids);
+  console.log("calculating estimate")
 
   // Store the estimation details in the database
   const estimationDetails = { guests, men, maids, totalEstimate };
@@ -114,9 +115,11 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
 
 // Function to estimate costs based on input data
 function estimate(guests, groomsmen, bridesmaids) {

@@ -50,12 +50,15 @@
     <p>Estimate Count: <span id="estimationCount"></span></p>
 
     <script>
+      console.log("beginning of html script");
+      configureWebSocket();
     function configureWebSocket() {
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       if (msg.type === "click") {
+        console.log("click count received:", msg.count);
         document.getElementById('estimationCount').textContent = msg.count;
         } 
       };
@@ -70,6 +73,7 @@
 
 
       document.getElementById('generateButton').addEventListener('click', () => {
+        console.log("button was clicked");
           const guestsInput = document.getElementById('guests');
           const menInput = document.getElementById('men');
           const maidsInput = document.getElementById('maids');
@@ -97,7 +101,7 @@
               console.error('Error:', error);
             });
           });
-          configureWebSocket();
+  
     </script>
     </main>
     </body>
