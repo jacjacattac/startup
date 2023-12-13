@@ -24,7 +24,7 @@ function peerProxy(httpServer) {
 
     // Listen for messages from clients
     ws.on('message', (message) => {
-        console.log('Message received:', message);
+        console.log('Message received:', message.type);
       const data = JSON.parse(message);
       if (data.type === 'click') {
         // Increment the click count and broadcast to all connected clients

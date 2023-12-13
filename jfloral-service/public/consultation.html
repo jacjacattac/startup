@@ -50,8 +50,7 @@
     <p>Estimate Count: <span id="estimationCount"></span></p>
 
     <script>
-      console.log("beginning of html script");
-      configureWebSocket();
+    console.log("beginning of html script");
     function configureWebSocket() {
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
@@ -101,7 +100,7 @@
               console.error('Error:', error);
             });
           });
-  
+          configureWebSocket();
     </script>
     </main>
     </body>
